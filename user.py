@@ -28,7 +28,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         super().__init__()
 
         # Luodaan säievaramto
-        self.threadPool = QThreadPool()
+        self.threadPool = QThreadPool().globalInstance()
 
         # Luodaan käyttöliittymä konvertoidun tiedoston perusteella MainWindow:n ui-ominaisuudeksi. Tämä suojaa lopun MainWindow-olion ylikirjoitukselta, kun ui-tiedostoa päivitetään
         self.ui = Ui_MainWindow()
@@ -138,7 +138,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             # Luodaan tietokantayhteys-olio
             dbConnection = dbOperations.DbConnection(dbSettings)
-            inUseVehicles = dbConnection.readAllColumnsFromTable('ajosa')
+            inUseVehicles = dbConnection.readAllColumnsFromTable('ajossa')
             
             # Muodostetaan luettelo vapaista autoista createCatalog-metodilla
             catalogData = self.createCatalog(inUseVehicles)
@@ -246,10 +246,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # Luetaan auton tiedoista merkki, malli ja henkilömäärä
         try:
-            # Luodaan tietokanta yhteys-olio
+            # Luodaan tietokantayhteys-olio
             dbConnection = dbOperations.DbConnection(dbSettings)
             criteria = f"rekisterinumero = '{self.ui.keysLineEdit.text()}'"
-            resultSet = dbConnection.filterColumsFromTable('vapaana', ['merkki', 'malli', 'henkilomaara'], criteria)
+            resultSet = dbConnection.filterColumsFromTable('vapaana',['merkki', 'malli', 'henkilomaara'], criteria)
             row = resultSet[0]
             carData = f'{row[0]} {row[1]} \n {row[2]}-paikkainen'
             self.ui.carInfoLabel.setText(carData)
@@ -312,29 +312,29 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     @Slot()
     def saveLendingData(self):
-        # tallenna tiedot tietokantaan
+        # Save data to the database
         # Luetaan tietokanta-asetukset paikallisiin muuttujiin
         dbSettings = self.currentSettings
         plainTextPassword = self.plainTextPassword
-        dbSettings['password'] = plainTextPassword # Vaihdetaan selväkieliseksi 
-        
+        dbSettings['password'] = plainTextPassword # Vaidetaan selväkieliseksi
+
         try:
             # Luodaan tietokantayhteys-olio
             dbConnection = dbOperations.DbConnection(dbSettings)
             ssn = self.ui.licenseLineEdit.text()
             key = self.ui.keysLineEdit.text()
             dataDictionary = {'hetu': ssn,
-                          'rekisterinumero': key}
+                            'rekisterinumero': key}
             dbConnection.addToTable('lainaus', dataDictionary)
 
             self.setInitialElements()
-            self.ui.statusbar.showMessage('Lainaus tiedot on tallenettu', 5000)
+            self.ui.statusbar.showMessage('Auton lainaustiedot tallennettiin', 5000)
             if self.ui.soundCheckBox.isChecked():
-                self.playSoundInTread('lendingOk.wav') 
-
+                self.playSoundInTread('lendingOk.wav')   
+        
         except Exception as e:
             title = 'Lainaustietojen tallentaminen ei onnistu'
-            text = 'Ajokortin tai auton tiedot virheeliset, ota yhteys henkilökuntaan!'
+            text = 'Ajokorttin tai auton tiedot virheelliset, ota yhteys henkilökuntaan!'
             detailedText = str(e)
             self.openWarning(title, text, detailedText)
             
