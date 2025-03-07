@@ -397,7 +397,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         for vehiclTtuple in tupleList:
             rowData = ''
             for vehicleData in vehiclTtuple:
-                rowData = rowData + f'{vehicleData} '
+                vehicleDataAsStr = str(vehicleData)
+                if vehicleDataAsStr == 'True':
+                    replaceVehicleData = 'automaatti'
+                elif vehicleDataAsStr == 'False':
+                    replaceVehicleData = 'manuaali'
+                else:
+                    replaceVehicleData = vehicleDataAsStr
+                rowData = rowData + f'{replaceVehicleData} '
             rowText = rowData + f'{suffix}\n'
             catalogData = catalogData + rowText
         return catalogData
