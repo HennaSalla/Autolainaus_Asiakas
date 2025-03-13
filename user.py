@@ -56,8 +56,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # Ohjelmaa käynnistäessä piilotetaan tarpeettomat elementit
         self.setInitialElements()
 
-        self.ui.statusbar.showMessage('Valitse Lainaa auto tai Palauta auto')
-
 
         # OHJELMOIDUT SIGNAALIT
         # ---------------------
@@ -129,6 +127,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.okPushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.ui.okPushButton.setEnabled(True)
         self.ui.carPicturesLabel.hide()
+        self.ui.registerLabel.hide()
+        self.ui.registerReturnLabel.hide()
 
         # Luetaan tietokanta-asetukset paikallisiin muuttujiin
         dbSettings = self.currentSettings
@@ -138,10 +138,33 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             # Luodaan tietokantayhteys-olio
             dbConnection = dbOperations.DbConnection(dbSettings)
+            # Luetaan ajossa näkymästä lista, jonka jäsenet ovat monikoita (tuple)
             inUseVehicles = dbConnection.readAllColumnsFromTable('ajossa')
-            
+
+            # Alustetaan tyhjä lista muokattuja autoteitoja varten
+            modifiedInUseVehiclesList = []
+
+            # Alustetaan tyhjä lista, jotta monikkoon (tuple) voi thedä muutoksia
+            modifiedInUseVehicles = []
+
+            # Käydään lista läpi ja lisätään monikon (tuple) alkiot listaan
+            for vehicleTuple in inUseVehicles:
+                modifiedInUseVehicles.append(vehicleTuple[0])
+                modifiedInUseVehicles.append(vehicleTuple[1])
+                modifiedInUseVehicles.append(vehicleTuple[2])
+                modifiedInUseVehicles.append(vehicleTuple[3])
+                modifiedInUseVehicles.append(vehicleTuple[4])
+                modifiedInUseVehicles.append('paikkaa') # Lisätään sana paikkaa
+                modifiedInUseVehicles.append(vehicleTuple[5])
+
+                # Muutetaan lista takisin monikokni (tuple)
+                modifiedInUseVehiclesTuple = tuple(modifiedInUseVehicles)
+
+                # Lisätään monikko (tuple) lopulliseen listaan
+                modifiedInUseVehiclesList.append(modifiedInUseVehiclesTuple)
+             
             # Muodostetaan luettelo vapaista autoista createCatalog-metodilla
-            catalogData = self.createCatalog(inUseVehicles)
+            catalogData = self.createCatalog(modifiedInUseVehiclesList)
             self.ui.drivingCarPlainTextEdit.setPlainText(catalogData)
 
         except Exception as e:
@@ -195,6 +218,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.carKeysLabel.show()
         self.ui.keysLineEdit.show()
         self.ui.keysLineEdit.setFocus()
+        self.ui.registerLabel.show()
         self.ui.statusbar.showMessage('Lue avaimen viivakoodi')
         if self.ui.soundCheckBox.isChecked():
             self.playSoundInTread('readKey.wav')
@@ -346,6 +370,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.carKeysReturnLabel.show()
         self.ui.keysReturnLineEdit.show()
         self.ui.keysReturnLineEdit.setFocus()
+        self.ui.registerReturnLabel.show()
         self.ui.goBackPushButton.show()
         self.ui.takeCarPushButton.hide()
         self.ui.returnCarPushButton.hide()

@@ -26,7 +26,7 @@
       <x>290</x>
       <y>0</y>
       <width>331</width>
-      <height>111</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="font">
@@ -167,19 +167,22 @@
    <widget class="QLineEdit" name="keysLineEdit">
     <property name="geometry">
      <rect>
-      <x>760</x>
+      <x>755</x>
       <y>410</y>
-      <width>181</width>
-      <height>41</height>
+      <width>190</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <family>Trebuchet MS</family>
+      <pointsize>24</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(75, 188, 197);</string>
+     <string notr="true">color: rgb(7, 7, 7);
+background-color: rgb(214, 213, 208);</string>
     </property>
     <property name="text">
      <string/>
@@ -328,7 +331,7 @@
     <property name="geometry">
      <rect>
       <x>740</x>
-      <y>460</y>
+      <y>470</y>
       <width>211</width>
       <height>81</height>
      </rect>
@@ -369,19 +372,22 @@
    <widget class="QLineEdit" name="keysReturnLineEdit">
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>575</x>
       <y>410</y>
-      <width>181</width>
-      <height>41</height>
+      <width>190</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <family>Trebuchet MS</family>
+      <pointsize>24</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(75, 188, 197);</string>
+     <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(214, 213, 208);</string>
     </property>
     <property name="text">
      <string/>
@@ -532,7 +538,7 @@
    <widget class="QPlainTextEdit" name="freeCarPlainTextEdit">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>170</x>
       <y>160</y>
       <width>501</width>
       <height>551</height>
@@ -565,7 +571,7 @@ ABC-123 VW Transporter 3 henkilöä</string>
    <widget class="QPlainTextEdit" name="drivingCarPlainTextEdit">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>670</x>
       <y>160</y>
       <width>531</width>
       <height>551</height>
@@ -594,6 +600,71 @@ border-color: rgb(75, 188, 197);</string>
 </string>
     </property>
    </widget>
+   <widget class="QLabel" name="registerLabel">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>400</y>
+      <width>241</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="userUiRescources.qrc">:/pictures/uiPictrues/EU-kilpi.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="registerReturnLabel">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>400</y>
+      <width>241</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="userUiRescources.qrc">:/pictures/uiPictrues/EU-kilpi.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>takeCarPushButton</zorder>
+   <zorder>returnCarPushButton</zorder>
+   <zorder>humanLabel</zorder>
+   <zorder>borrowerLabel</zorder>
+   <zorder>carTakeLabel</zorder>
+   <zorder>carKeysLabel</zorder>
+   <zorder>clockPictureLabel</zorder>
+   <zorder>licenseLineEdit</zorder>
+   <zorder>calenderLabel</zorder>
+   <zorder>dateLabel</zorder>
+   <zorder>goBackPushButton</zorder>
+   <zorder>hourLabel</zorder>
+   <zorder>nameLabel</zorder>
+   <zorder>carInfoLabel</zorder>
+   <zorder>okPushButton</zorder>
+   <zorder>carKeysReturnLabel</zorder>
+   <zorder>carTakeReturnLabel</zorder>
+   <zorder>freeCarLabel</zorder>
+   <zorder>drivingCarLabel</zorder>
+   <zorder>soundCheckBox</zorder>
+   <zorder>carPicturesLabel</zorder>
+   <zorder>freeCarPlainTextEdit</zorder>
+   <zorder>drivingCarPlainTextEdit</zorder>
+   <zorder>registerReturnLabel</zorder>
+   <zorder>keysReturnLineEdit</zorder>
+   <zorder>registerLabel</zorder>
+   <zorder>keysLineEdit</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

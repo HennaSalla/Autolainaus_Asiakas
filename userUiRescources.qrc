@@ -1,9 +1,8 @@
 <RCC>
   <qresource prefix="pictures">
     <file>uiPictrues/auto.png</file>
-    <file>uiPictrues/volkswagen-7356817_1280.jpg</file>
     <file>uiPictrues/calender.png</file>
-    <file>uiPictrues/soundOff.png</file>
+    <file>uiPictrues/EU-kilpi.png</file>
     <file>uiPictrues/soundsOn.png</file>
     <file>uiPictrues/clock.png</file>
     <file>uiPictrues/human.png</file>
