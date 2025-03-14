@@ -257,8 +257,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.okPushButton.show()
         self.ui.carPicturesLabel.show()
         self.ui.statusbar.showMessage('Jos tiedot on oikein paina Ok painiketta')
-        #self.ui.dateLabel.setText(f'{time.strftime('%d.%m.%Y')}')
-        #self.ui.hourLabel.setText(f'{time.strftime('%H:%M')}')
         if self.ui.soundCheckBox.isChecked():
             self.playSoundInTread('readKey.wav')
 
@@ -363,7 +361,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.openWarning(title, text, detailedText)
             
 
-    # Kuin aloita palautus nappia on painettu nämä komponentit tulevat näkyviin tai piiloutuu
+    # Kuin Palauta auto nappia on painettu nämä komponentit tulevat näkyviin tai piiloutuu
     @Slot()
     def returnCar(self):
         self.ui.carTakeReturnLabel.show()
@@ -383,7 +381,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.playSoundInTread('readKey.wav')
 
 
-    # Kumoa painikkeen painamisen jälkeen palataan alkunäkymään
+    # Ok painikkeen painamisen jälkeen palataan alkunäkymään
     def returnStart(self):
         # Tallenetaan palautus
         # Luetaan tietokanta-asetukset paikallisiin muutujiin
@@ -400,6 +398,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if self.ui.soundCheckBox.isChecked():
             self.playSoundInTread('returnOk.wav')
 
+    # Kumoa napin painamisen jälkeen palataan alkunäkymään
     def goBack(self):
         self.setInitialElements()
         self.ui.statusbar.showMessage('Toiminto peruutettiin', 5000)
