@@ -211,6 +211,11 @@ class Ui_MainWindow(object):
         self.registerReturnLabel.setGeometry(QRect(540, 400, 241, 71))
         self.registerReturnLabel.setPixmap(QPixmap(u":/pictures/uiPictrues/EU-kilpi.png"))
         self.registerReturnLabel.setScaledContents(True)
+        self.logoLabel = QLabel(self.centralwidget)
+        self.logoLabel.setObjectName(u"logoLabel")
+        self.logoLabel.setGeometry(QRect(10, 10, 231, 61))
+        self.logoLabel.setPixmap(QPixmap(u":/pictures/uiPictrues/raseko.png"))
+        self.logoLabel.setScaledContents(True)
         MainWindow.setCentralWidget(self.centralwidget)
         self.takeCarPushButton.raise_()
         self.returnCarPushButton.raise_()
@@ -239,6 +244,7 @@ class Ui_MainWindow(object):
         self.keysReturnLineEdit.raise_()
         self.registerLabel.raise_()
         self.keysLineEdit.raise_()
+        self.logoLabel.raise_()
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 1366, 33))
@@ -287,5 +293,6 @@ class Ui_MainWindow(object):
         self.drivingCarPlainTextEdit.setPlainText("")
         self.registerLabel.setText("")
         self.registerReturnLabel.setText("")
+        self.logoLabel.setText("")
     # retranslateUi
 
