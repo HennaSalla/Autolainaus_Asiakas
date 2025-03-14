@@ -129,6 +129,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.carPicturesLabel.hide()
         self.ui.registerLabel.hide()
         self.ui.registerReturnLabel.hide()
+        self.ui.freeCarPlainTextEdit.clear()
+        self.ui.drivingCarPlainTextEdit.clear()
 
         # Luetaan tietokanta-asetukset paikallisiin muuttujiin
         dbSettings = self.currentSettings
@@ -144,11 +146,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             # Alustetaan tyhjä lista muokattuja autoteitoja varten
             modifiedInUseVehiclesList = []
 
-            # Alustetaan tyhjä lista, jotta monikkoon (tuple) voi thedä muutoksia
-            modifiedInUseVehicles = []
+            
 
             # Käydään lista läpi ja lisätään monikon (tuple) alkiot listaan
             for vehicleTuple in inUseVehicles:
+                # Alustetaan tyhjä lista, jotta monikkoon (tuple) voi thedä muutoksia
+                modifiedInUseVehicles = []
                 modifiedInUseVehicles.append(vehicleTuple[0])
                 modifiedInUseVehicles.append(vehicleTuple[1])
                 modifiedInUseVehicles.append(vehicleTuple[2])
@@ -187,6 +190,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             text = 'Vapaana olevien autojen tiedot eivät ole saatavissa'
             detailedText = str(e)
             self.openWarning(title, text, detailedText)
+
+        # Aktivoidaan Lainaa auto ja Palauta auto painikkeet, jos lainattavia tai palautettavia autoja on listalla
+        if self.ui.freeCarPlainTextEdit.toPlainText() == '':
+            self.ui.takeCarPushButton.setEnabled(False)
+        else:
+            self.ui.takeCarPushButton.setEnabled(True)
+
+        if self.ui.drivingCarPlainTextEdit.toPlainText() == '':
+            self.ui.returnCarPushButton.setEnabled(False)
+        else:
+            self.ui.returnCarPushButton.setEnabled(True)
 
 
     
