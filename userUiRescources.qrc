@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="pictures">
+    <file>uiPictrues/raseko.png</file>
     <file>uiPictrues/auto.png</file>
     <file>uiPictrues/calender.png</file>
     <file>uiPictrues/EU-kilpi.png</file>
