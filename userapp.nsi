@@ -104,14 +104,14 @@ Section "Autolainaussovellus asiakas" SecProgram
   WriteRegStr HKCU "Software\Autolainausasiakas" "" $INSTDIR
   
   # Create uninstaller
-  WriteUninstaller "$INSTDIR\UninstallAutolainaus.exe"
+  WriteUninstaller "$INSTDIR\UninstallAutolainausasiakas.exe"
   
   !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     
     # Create shortcuts
     CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
     CreateShortcut "$SMPROGRAMS\$StartMenuFolder\Autolainausasiakas.lnk" "$INSTDIR\user.exe"
-    CreateShortcut "$SMPROGRAMS\$StartMenuFolder\UninstallAutolainaus.lnk" "$INSTDIR\UninstallAutolainaus.exe"
+    CreateShortcut "$SMPROGRAMS\$StartMenuFolder\UninstallAutolainausasiakas.lnk" "$INSTDIR\UninstallAutolainausasiakas.exe"
   
   !insertmacro MUI_STARTMENU_WRITE_END
 

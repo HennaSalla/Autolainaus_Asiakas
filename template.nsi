@@ -33,9 +33,15 @@
 
 # Interface Settings
 
+  # Set icon for installer window
+  !define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\orange-install.ico"
+
   # Add a bitmap (150 x 57 px) for a logo into the header of the installer page
   !define MUI_HEADERIMAGE
   !define MUI_HEADERIMAGE_BITMAP "logo.bmp"
+
+  # Set left side image for start and end page from NISI-folder
+  !define MUI_WELCOMEFINISHPAGE_BITMAP "${NSISDIR}\Contrib\Graphics\Wizard\orange.bmp"
 
   # Check if user really wants to abort
   !define MUI_ABORTWARNING
