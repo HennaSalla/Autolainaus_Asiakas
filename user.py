@@ -224,6 +224,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.drivingCarPlainTextEdit.hide()
         self.ui.goBackPushButton.show()
         self.ui.reasonComboBox.show()
+        self.ui.statusbar.showMessage('Valitse ajon tarkoitus')
     
     # Kuin Aloita lainaus nappia on painettu nämä componentit tulee esiin tai piiloutuu
     @Slot()
