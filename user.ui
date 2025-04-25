@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1366</width>
-    <height>768</height>
+    <height>766</height>
    </rect>
   </property>
   <property name="contextMenuPolicy">
@@ -26,8 +26,52 @@
    <widget class="QPushButton" name="takeCarPushButton">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>0</y>
+      <x>350</x>
+      <y>30</y>
+      <width>331</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 33, 72);
+background-color: rgb(75, 188, 197);
+border: 6px solid rgb(223, 32, 112);
+
+</string>
+    </property>
+    <property name="locale">
+     <locale language="Finnish" country="Finland"/>
+    </property>
+    <property name="text">
+     <string>Lainaa auto</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="returnCarPushButton">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>30</y>
       <width>331</width>
       <height>121</height>
      </rect>
@@ -42,32 +86,9 @@
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(75, 188, 197);</string>
-    </property>
-    <property name="text">
-     <string>Lainaa auto</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="returnCarPushButton">
-    <property name="geometry">
-     <rect>
-      <x>710</x>
-      <y>0</y>
-      <width>311</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(75, 188, 197);</string>
+     <string notr="true">background-color: rgb(75, 188, 197);
+color: rgb(0, 33, 72);
+border: 6px solid rgb(223, 32, 112);</string>
     </property>
     <property name="text">
      <string>Palauta auto</string>
@@ -76,10 +97,10 @@
    <widget class="QLabel" name="humanLabel">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>180</y>
-      <width>140</width>
-      <height>210</height>
+      <x>410</x>
+      <y>330</y>
+      <width>141</width>
+      <height>221</height>
      </rect>
     </property>
     <property name="text">
@@ -95,9 +116,9 @@
    <widget class="QLabel" name="borrowerLabel">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>130</y>
-      <width>131</width>
+      <x>440</x>
+      <y>290</y>
+      <width>91</width>
       <height>31</height>
      </rect>
     </property>
@@ -117,7 +138,7 @@
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>130</y>
+      <y>290</y>
       <width>61</width>
       <height>31</height>
      </rect>
@@ -137,8 +158,8 @@
    <widget class="QLabel" name="carKeysLabel">
     <property name="geometry">
      <rect>
-      <x>780</x>
-      <y>180</y>
+      <x>770</x>
+      <y>320</y>
       <width>140</width>
       <height>210</height>
      </rect>
@@ -156,8 +177,8 @@
    <widget class="QLabel" name="clockPictureLabel">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>490</y>
+      <x>1190</x>
+      <y>330</y>
       <width>111</width>
       <height>91</height>
      </rect>
@@ -178,9 +199,9 @@
    <widget class="QLineEdit" name="keysLineEdit">
     <property name="geometry">
      <rect>
-      <x>755</x>
-      <y>410</y>
-      <width>190</width>
+      <x>750</x>
+      <y>550</y>
+      <width>181</width>
       <height>51</height>
      </rect>
     </property>
@@ -208,8 +229,8 @@ background-color: rgb(214, 213, 208);</string>
    <widget class="QLineEdit" name="licenseLineEdit">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>400</y>
+      <x>390</x>
+      <y>560</y>
       <width>201</width>
       <height>41</height>
      </rect>
@@ -238,8 +259,8 @@ background-color: rgb(214, 213, 208);</string>
    <widget class="QLabel" name="calenderLabel">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>500</y>
+      <x>1180</x>
+      <y>180</y>
       <width>111</width>
       <height>91</height>
      </rect>
@@ -257,8 +278,8 @@ background-color: rgb(214, 213, 208);</string>
    <widget class="QLabel" name="dateLabel">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>600</y>
+      <x>1180</x>
+      <y>280</y>
       <width>141</width>
       <height>21</height>
      </rect>
@@ -294,7 +315,9 @@ background-color: rgb(214, 213, 208);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(75, 188, 197);</string>
+     <string notr="true">background-color: rgb(75, 188, 197);
+color: rgb(0, 33, 72);
+border: 6px solid rgb(223, 32, 112);</string>
     </property>
     <property name="text">
      <string>KUMOA</string>
@@ -303,8 +326,8 @@ background-color: rgb(214, 213, 208);</string>
    <widget class="QLabel" name="hourLabel">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>600</y>
+      <x>1220</x>
+      <y>430</y>
       <width>61</width>
       <height>21</height>
      </rect>
@@ -324,9 +347,9 @@ background-color: rgb(214, 213, 208);</string>
    <widget class="QLabel" name="nameLabel">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>450</y>
-      <width>161</width>
+      <x>330</x>
+      <y>570</y>
+      <width>301</width>
       <height>41</height>
      </rect>
     </property>
@@ -341,12 +364,15 @@ background-color: rgb(214, 213, 208);</string>
     <property name="text">
      <string>Lainaajan nimi</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
    </widget>
    <widget class="QLabel" name="carInfoLabel">
     <property name="geometry">
      <rect>
       <x>740</x>
-      <y>470</y>
+      <y>620</y>
       <width>211</width>
       <height>81</height>
      </rect>
@@ -382,7 +408,9 @@ background-color: rgb(214, 213, 208);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(75, 188, 197);</string>
+     <string notr="true">background-color: rgb(75, 188, 197);
+color: rgb(0, 33, 72);
+border: 6px solid rgb(223, 32, 112);</string>
     </property>
     <property name="text">
      <string>OK</string>
@@ -391,9 +419,9 @@ background-color: rgb(214, 213, 208);</string>
    <widget class="QLineEdit" name="keysReturnLineEdit">
     <property name="geometry">
      <rect>
-      <x>575</x>
-      <y>410</y>
-      <width>190</width>
+      <x>580</x>
+      <y>490</y>
+      <width>181</width>
       <height>51</height>
      </rect>
     </property>
@@ -421,8 +449,8 @@ background-color: rgb(214, 213, 208);</string>
    <widget class="QLabel" name="carKeysReturnLabel">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>180</y>
+      <x>590</x>
+      <y>250</y>
       <width>140</width>
       <height>210</height>
      </rect>
@@ -440,8 +468,8 @@ background-color: rgb(214, 213, 208);</string>
    <widget class="QLabel" name="carTakeReturnLabel">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>130</y>
+      <x>620</x>
+      <y>180</y>
       <width>61</width>
       <height>31</height>
      </rect>
@@ -461,8 +489,8 @@ background-color: rgb(214, 213, 208);</string>
    <widget class="QLabel" name="freeCarLabel">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>120</y>
+      <x>330</x>
+      <y>180</y>
       <width>151</width>
       <height>31</height>
      </rect>
@@ -487,7 +515,7 @@ background-color: rgb(214, 213, 208);</string>
     <property name="geometry">
      <rect>
       <x>890</x>
-      <y>120</y>
+      <y>180</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -537,10 +565,10 @@ background-color: rgb(214, 213, 208);</string>
    <widget class="QLabel" name="carPicturesLabel">
     <property name="geometry">
      <rect>
-      <x>990</x>
-      <y>180</y>
-      <width>341</width>
-      <height>261</height>
+      <x>680</x>
+      <y>320</y>
+      <width>301</width>
+      <height>211</height>
      </rect>
     </property>
     <property name="text">
@@ -562,10 +590,10 @@ background-color: rgb(214, 213, 208);</string>
    <widget class="QPlainTextEdit" name="freeCarPlainTextEdit">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>160</y>
+      <x>190</x>
+      <y>220</y>
       <width>501</width>
-      <height>551</height>
+      <height>481</height>
      </rect>
     </property>
     <property name="font">
@@ -596,10 +624,10 @@ ABC-123 VW Transporter 3 henkilöä</string>
    <widget class="QPlainTextEdit" name="drivingCarPlainTextEdit">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>160</y>
+      <x>690</x>
+      <y>220</y>
       <width>531</width>
-      <height>551</height>
+      <height>481</height>
      </rect>
     </property>
     <property name="font">
@@ -628,8 +656,8 @@ border-color: rgb(75, 188, 197);</string>
    <widget class="QLabel" name="registerLabel">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>400</y>
+      <x>710</x>
+      <y>540</y>
       <width>241</width>
       <height>71</height>
      </rect>
@@ -648,7 +676,7 @@ border-color: rgb(75, 188, 197);</string>
     <property name="geometry">
      <rect>
       <x>540</x>
-      <y>400</y>
+      <y>480</y>
       <width>241</width>
       <height>71</height>
      </rect>
@@ -682,6 +710,38 @@ border-color: rgb(75, 188, 197);</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QComboBox" name="reasonComboBox">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>170</y>
+      <width>351</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>32</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(75, 188, 197);
+color: rgb(0, 33, 72);</string>
+    </property>
+    <property name="locale">
+     <locale language="Finnish" country="Finland"/>
+    </property>
+    <property name="currentText">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Ajon tarkoitus</string>
+    </property>
+   </widget>
    <zorder>takeCarPushButton</zorder>
    <zorder>returnCarPushButton</zorder>
    <zorder>humanLabel</zorder>
@@ -703,13 +763,14 @@ border-color: rgb(75, 188, 197);</string>
    <zorder>drivingCarLabel</zorder>
    <zorder>soundCheckBox</zorder>
    <zorder>carPicturesLabel</zorder>
-   <zorder>freeCarPlainTextEdit</zorder>
    <zorder>drivingCarPlainTextEdit</zorder>
-   <zorder>registerReturnLabel</zorder>
-   <zorder>keysReturnLineEdit</zorder>
    <zorder>registerLabel</zorder>
    <zorder>keysLineEdit</zorder>
    <zorder>logoLabel</zorder>
+   <zorder>freeCarPlainTextEdit</zorder>
+   <zorder>registerReturnLabel</zorder>
+   <zorder>keysReturnLineEdit</zorder>
+   <zorder>reasonComboBox</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
