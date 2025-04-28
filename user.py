@@ -63,7 +63,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # Kuin Lainaa auto painiketta on painettu kutsutaan metodia activateReason
         self.ui.takeCarPushButton.clicked.connect(self.activateReason)
 
-        # TODO: Lisää takeCar uusi singnaali slotti
+        # Kun ajon syy on valittu, kutsutaan takeCar-metodi
+        self.ui.reasonComboBox.currentTextChanged.connect(self.takeCar)
 
         # Kuina ajokortti on luettu kutsutaan showKeys metodia
         self.ui.licenseLineEdit.returnPressed.connect(self.showKeys)
@@ -225,6 +226,24 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui.goBackPushButton.show()
         self.ui.reasonComboBox.show()
         self.ui.statusbar.showMessage('Valitse ajon tarkoitus')
+
+        # Päivitetään ajon tarkoitus -yhdistelmäruudun arvot
+        # Luetaan tietokanta-asetukset paikallisiin muuttujiin
+        dbSettings = self.currentSettings
+        plainTextPassword = self.plainTextPassword
+        dbSettings['password'] = plainTextPassword # Vaihdetaan selväkieliseksi 
+
+        # Tehdään lista ajon tarkoituksista
+        dbConnection = dbOperations.DbConnection(dbSettings) # Luodaan tietokanta yhteys-olio
+
+        # Tehdään lista ajoneuvotyyppi-listan arvoista
+        reasonList = dbConnection.readColumsFromTable('tarkoitus', ['tarkoitus'])
+        reasonStringList = []
+        for item in reasonList:
+            stringValue = str(item[0])
+            reasonStringList.append(stringValue)
+        self.ui.reasonComboBox.clear()
+        self.ui.reasonComboBox.addItems(reasonStringList)
     
     # Kuin Aloita lainaus nappia on painettu nämä componentit tulee esiin tai piiloutuu
     @Slot()
@@ -373,9 +392,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             # Luodaan tietokantayhteys-olio
             dbConnection = dbOperations.DbConnection(dbSettings)
-            ssn = self.ui.licenseLineEdit.text()
-            key = self.ui.keysLineEdit.text()
-            dataDictionary = {'hetu': ssn,
+            reason = self.ui.reasonComboBox.currentText()
+            ssn = self.ui.licenseLineEdit.text() # Henkilötunnus ajopäiväkirjaan
+            key = self.ui.keysLineEdit.text() # Rekisterinumero ajopäiväkirjaan
+            dataDictionary = {'tarkoitus': reason,
+                            'hetu': ssn,
                             'rekisterinumero': key}
             dbConnection.addToTable('lainaus', dataDictionary)
 
@@ -484,6 +505,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 # Luodaan sovellus
 app = QtWidgets.QApplication(sys.argv)
+
+# Asetetaan sovelluksen tyyliksi Fusion, ilman käyttöjärjestelmän oletustyyliä
+app.setStyle('fusion')
 
 # Luodaan objekti pääikkunalle ja tehdään siitä näkyvä
 window = MainWindow()

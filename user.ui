@@ -45,10 +45,16 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(0, 33, 72);
+     <string notr="true">QPushButton {
+color: rgb(0, 33, 72);
 background-color: rgb(75, 188, 197);
 border: 6px solid rgb(223, 32, 112);
+}
 
+QPushButton:hover
+{
+   background-color: white;
+}
 </string>
     </property>
     <property name="locale">
@@ -86,9 +92,16 @@ border: 6px solid rgb(223, 32, 112);
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(75, 188, 197);
+     <string notr="true">QPushButton {
 color: rgb(0, 33, 72);
-border: 6px solid rgb(223, 32, 112);</string>
+background-color: rgb(75, 188, 197);
+border: 6px solid rgb(223, 32, 112);
+}
+
+QPushButton:hover
+{
+   background-color: white;
+}</string>
     </property>
     <property name="text">
      <string>Palauta auto</string>
@@ -315,9 +328,16 @@ background-color: rgb(214, 213, 208);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(75, 188, 197);
+     <string notr="true">QPushButton {
 color: rgb(0, 33, 72);
-border: 6px solid rgb(223, 32, 112);</string>
+background-color: rgb(75, 188, 197);
+border: 6px solid rgb(223, 32, 112);
+}
+
+QPushButton:hover
+{
+   background-color: white;
+}</string>
     </property>
     <property name="text">
      <string>KUMOA</string>
@@ -408,9 +428,16 @@ border: 6px solid rgb(223, 32, 112);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(75, 188, 197);
+     <string notr="true">QPushButton {
 color: rgb(0, 33, 72);
-border: 6px solid rgb(223, 32, 112);</string>
+background-color: rgb(75, 188, 197);
+border: 6px solid rgb(223, 32, 112);
+}
+
+QPushButton:hover
+{
+   background-color: white;
+}</string>
     </property>
     <property name="text">
      <string>OK</string>
@@ -713,15 +740,15 @@ border-color: rgb(75, 188, 197);</string>
    <widget class="QComboBox" name="reasonComboBox">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>470</x>
       <y>170</y>
-      <width>351</width>
+      <width>401</width>
       <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>32</pointsize>
+      <pointsize>26</pointsize>
       <bold>true</bold>
      </font>
     </property>

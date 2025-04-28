@@ -41,10 +41,16 @@ class Ui_MainWindow(object):
         self.takeCarPushButton.setFont(font)
         self.takeCarPushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.takeCarPushButton.setAutoFillBackground(False)
-        self.takeCarPushButton.setStyleSheet(u"color: rgb(0, 33, 72);\n"
+        self.takeCarPushButton.setStyleSheet(u"QPushButton {\n"
+"color: rgb(0, 33, 72);\n"
 "background-color: rgb(75, 188, 197);\n"
 "border: 6px solid rgb(223, 32, 112);\n"
+"}\n"
 "\n"
+"QPushButton:hover\n"
+"{\n"
+"   background-color: white;\n"
+"}\n"
 "")
         self.takeCarPushButton.setLocale(QLocale(QLocale.Finnish, QLocale.Finland))
         self.takeCarPushButton.setAutoDefault(False)
@@ -54,9 +60,16 @@ class Ui_MainWindow(object):
         self.returnCarPushButton.setGeometry(QRect(730, 30, 331, 121))
         self.returnCarPushButton.setFont(font)
         self.returnCarPushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.returnCarPushButton.setStyleSheet(u"background-color: rgb(75, 188, 197);\n"
+        self.returnCarPushButton.setStyleSheet(u"QPushButton {\n"
 "color: rgb(0, 33, 72);\n"
-"border: 6px solid rgb(223, 32, 112);")
+"background-color: rgb(75, 188, 197);\n"
+"border: 6px solid rgb(223, 32, 112);\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"   background-color: white;\n"
+"}")
         self.humanLabel = QLabel(self.centralwidget)
         self.humanLabel.setObjectName(u"humanLabel")
         self.humanLabel.setGeometry(QRect(410, 330, 141, 221))
@@ -121,9 +134,16 @@ class Ui_MainWindow(object):
         font3.setBold(True)
         self.goBackPushButton.setFont(font3)
         self.goBackPushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.goBackPushButton.setStyleSheet(u"background-color: rgb(75, 188, 197);\n"
+        self.goBackPushButton.setStyleSheet(u"QPushButton {\n"
 "color: rgb(0, 33, 72);\n"
-"border: 6px solid rgb(223, 32, 112);")
+"background-color: rgb(75, 188, 197);\n"
+"border: 6px solid rgb(223, 32, 112);\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"   background-color: white;\n"
+"}")
         self.hourLabel = QLabel(self.centralwidget)
         self.hourLabel.setObjectName(u"hourLabel")
         self.hourLabel.setGeometry(QRect(1220, 430, 61, 21))
@@ -145,9 +165,16 @@ class Ui_MainWindow(object):
         self.okPushButton.setGeometry(QRect(1140, 480, 211, 91))
         self.okPushButton.setFont(font3)
         self.okPushButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.okPushButton.setStyleSheet(u"background-color: rgb(75, 188, 197);\n"
+        self.okPushButton.setStyleSheet(u"QPushButton {\n"
 "color: rgb(0, 33, 72);\n"
-"border: 6px solid rgb(223, 32, 112);")
+"background-color: rgb(75, 188, 197);\n"
+"border: 6px solid rgb(223, 32, 112);\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"   background-color: white;\n"
+"}")
         self.keysReturnLineEdit = QLineEdit(self.centralwidget)
         self.keysReturnLineEdit.setObjectName(u"keysReturnLineEdit")
         self.keysReturnLineEdit.setGeometry(QRect(580, 490, 181, 51))
@@ -234,9 +261,9 @@ class Ui_MainWindow(object):
         self.logoLabel.setScaledContents(True)
         self.reasonComboBox = QComboBox(self.centralwidget)
         self.reasonComboBox.setObjectName(u"reasonComboBox")
-        self.reasonComboBox.setGeometry(QRect(510, 170, 351, 71))
+        self.reasonComboBox.setGeometry(QRect(470, 170, 401, 71))
         font6 = QFont()
-        font6.setPointSize(32)
+        font6.setPointSize(26)
         font6.setBold(True)
         self.reasonComboBox.setFont(font6)
         self.reasonComboBox.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
